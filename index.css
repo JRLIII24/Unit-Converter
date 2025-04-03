@@ -1,105 +1,153 @@
 html, body {
-    height: 100%;
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #F4F4F4;
-    color: black;
-    display: flex;
-    flex-direction: column;
-    transition: background-color 0.3s ease, color 0.3s ease;
-  }
+  height: 100%;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #F4F4F4;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  box-sizing: border-box;
+}
 
-  /* Dark Mode Styles */
-  .dark-mode {
-    background-color: #1F2937;
-    color: white;
-  }
+* {
+  box-sizing: inherit;
+}
 
-  .dark-mode .section {
-    background-color: #273549;
-    color: white;
-  }
+.dark-mode {
+  background-color: #1F2937;
+  color: white;
+}
 
-  h1, h2 {
-    color: #CCC1FF;
-  }
+.dark-mode .section {
+  background-color: #273549;
+  color: white;
+}
 
-  .container-1 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: #6943FF;
-    color: white;
-    padding: 2rem 1rem;
-  }
+h1, h2 {
+  color: #CCC1FF;
+  margin: 0.5rem 0;
+  text-align: center;
+}
 
-  #convert {
-    font-size: 20px;
-    background-color: white;
-    color: black;
-    border: none;
-    border-radius: 4px;
-    margin-top: 20px;
-    margin-bottom: 10px;
-    padding: 10px 30px;
-    cursor: pointer;
-  }
+.container-1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #6943FF;
+  color: white;
+  padding: 2rem 1rem;
+  text-align: center;
+}
 
-  #theme-toggle {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    padding: 8px 16px;
-    border: none;
-    border-radius: 5px;
-    background-color: #6943FF;
-    color: white;
-    font-weight: bold;
-    cursor: pointer;
-    z-index: 1000;
+#theme-toggle {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 5px;
+  background-color: #6943FF;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.metric {
+  width: 100%;
+  max-width: 250px;
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 1rem;
+  border: 3px solid #ccc;
+  border-radius: 6px;
+  outline: none;
+  background-color: #6943FF;
+  color: white;
+  -moz-appearance: textfield;
+}
+
+.metric::-webkit-outer-spin-button,
+.metric::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.metric:focus {
+  border-color: #4a90e2;
+  box-shadow: 0 0 4px rgba(74, 144, 226, 0.5);
+}
+
+#convert {
+  font-size: 1.2rem;
+  background-color: white;
+  color: black;
+  border: none;
+  border-radius: 4px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  padding: 10px 30px;
+  cursor: pointer;
+}
+
+.section-container {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 50px;
+  padding: 0 1rem 5px;
+}
+
+.section {
+  min-height: 100px;
+  background-color: white;
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+  color: black;
+  font-size: 1.1rem;
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1.6rem;
   }
 
   .metric {
-    height: 100px;
-    width: 150px;
-    font-size: 3.5rem;
-    font-weight: bold;
-    text-align: center;
-    padding: 0.5rem;
-    border: 3px solid #ccc;
-    border-radius: 6px;
-    outline: none;
-    background-color: #6943FF;
-    color: white;
+    font-size: 2rem;
+    padding: 0.8rem;
   }
 
-  .metric::-webkit-outer-spin-button,
-  .metric::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-  }
-
-  .metric:focus {
-    border-color: #4a90e2;
-    box-shadow: 0 0 4px rgba(74, 144, 226, 0.5);
-  }
-
-  .section-container {
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    gap: 1rem;
-    margin-top: 50px;
-    padding: 0 1rem 5px;
+  #convert {
+    font-size: 1rem;
+    padding: 10px 20px;
   }
 
   .section {
-    min-height: 100px;
-    background-color: white;
-    padding: 1rem;
-    border-radius: 8px;
-    text-align: center;
-    color: black;
+    font-size: 1rem;
+    padding: 0.8rem;
   }
+}
+
+@media (max-width: 480px) {
+  .metric {
+    font-size: 1.5rem;
+    padding: 0.6rem;
+  }
+
+  #theme-toggle {
+    top: 10px;
+    right: 10px;
+    padding: 6px 12px;
+    font-size: 0.85rem;
+  }
+
+  .section {
+    font-size: 0.95rem;
+  }
+}
