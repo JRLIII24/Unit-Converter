@@ -24,7 +24,7 @@ function convert() {
   }else {
     getLen.textContent = `${inputValue} meters = ${metersToFeet.toFixed(3)} feet | ${inputValue} feet = ${feetToMeters.toFixed(3)} meters`
     getVol.textContent = `${inputValue} liters = ${litersToGallons.toFixed(3)} gallons | ${inputValue} gallons = ${gallonsToLiters.toFixed(3)} liters`
-    getMass.textContent = `${inputValue} kilos = ${poundsToKilos.toFixed(3)} pounds | ${inputValue} pounds = ${kilosToPounds.toFixed(3)} kilos`
+    getMass.textContent = `${inputValue} kilos = ${kilosToPounds.toFixed(3)} pounds | ${inputValue} pounds = ${poundsToKilos.toFixed(3)} kilos`
 
   }
 
